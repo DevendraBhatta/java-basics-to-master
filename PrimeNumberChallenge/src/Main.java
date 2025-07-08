@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println(i + " is " + (isPrime(i) ? " SURE" : "NOT") + " a Prime Number");
         }
     }
@@ -10,9 +10,8 @@ public class Main {
             return (wholeNumber == 2);
         }
 
-        for (int divisor = 2; divisor < wholeNumber; divisor++) {
-            double dividend = wholeNumber % divisor;
-            if (dividend == 0) {
+        for (int divisor = 2; divisor <= wholeNumber/2; divisor++) {
+            if (wholeNumber % divisor == 0) {
                 return false;
             }
         }
