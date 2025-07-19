@@ -1,10 +1,10 @@
 public class Car {
     // fields or state
-    private String make = "Tesla";
-    private String model = "Model x";
-    private String color = "Gray";
-    private int doors = 2;
-    private boolean isConvertible = true;
+    private String make;
+    private String model;
+    private String color;
+    private int doors;
+    private boolean isConvertible;
 
     public String getMake() {
         return make;
@@ -27,32 +27,42 @@ public class Car {
     }
 
     public void setMake(String make) {
-        this.make = make;
+        if (make == null) {
+            make = "Unknown";
+        }
+        String lowerCaseMake = make.toLowerCase();
+        switch (lowerCaseMake) {
+            case "holden", "porsche", "tesla" -> this.make = lowerCaseMake;
+            default -> {
+                this.make = "Unsupported";
+            }
+        }
     }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+public void setModel(String model) {
+    this.model = model;
+}
 
-    public void setDoors(int doors) {
-        this.doors = doors;
-    }
+public void setColor(String color) {
+    this.color = color;
+}
 
-    public void setConvertible(boolean convertible) {
-        isConvertible = convertible;
-    }
+public void setDoors(int doors) {
+    this.doors = doors;
+}
 
-    // method or behaviour or function
-    public void describeCar() {
-        System.out.println(doors + "-Door " +
-                color + " Color " +
-                model + " Model " +
-                make + " Make" +
-                (isConvertible ? " Convertible" : " Not Convertible"));
-    }
+public void setConvertible(boolean convertible) {
+    isConvertible = convertible;
+}
+
+// method or behaviour or function
+public void describeCar() {
+    System.out.println(doors + "-Door " +
+            color + " Color " +
+            model + " Model " +
+            make + " Make" +
+            (isConvertible ? " Convertible" : " Not Convertible"));
+}
 
 }
