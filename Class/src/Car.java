@@ -40,29 +40,29 @@ public class Car {
     }
 
 
-public void setModel(String model) {
-    this.model = model;
-}
+    public void setModel(String model) {
+        this.model = model;
+    }
 
-public void setColor(String color) {
-    this.color = color;
-}
+    public void setColor(String color) {
+        this.color = color;
+    }
 
-public void setDoors(int doors) {
-    this.doors = doors;
-}
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
 
-public void setConvertible(boolean convertible) {
-    isConvertible = convertible;
-}
+    public void setConvertible(boolean convertible) {
+        isConvertible = convertible;
+    }
 
-// method or behaviour or function
-public void describeCar() {
-    System.out.println(doors + "-Door " +
-            color + " Color " +
-            model + " Model " +
-            make + " Make" +
-            (isConvertible ? " Convertible" : " Not Convertible"));
-}
+    // method or behaviour or function
+    public void describeCar() {
+        System.out.println(doors + "-Door " +
+                color + " Color " +
+                model + " Model " +
+                make + " Make" +
+                (isConvertible ? " Convertible" : " Not Convertible"));
+    }
 
 }
