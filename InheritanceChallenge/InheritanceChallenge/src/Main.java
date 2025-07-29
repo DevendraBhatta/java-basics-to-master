@@ -13,11 +13,15 @@ public class Main {
         System.out.println(omi);
         System.out.println("omi's paycheck  = $" + omi.collectPay());
 
-        omi.retire();
+          omi.retire();
         System.out.println("Omi's pension check = $"+omi.collectPay());
 
 
-        HourlyEmployee marry = new HourlyEmployee("")
+        HourlyEmployee marry = new HourlyEmployee("Marry","05/05/1970","03/032020",25.3);
+        System.out.println(marry);
+        System.out.println("Marry's paycheck = $"+marry.collectPay());
+        System.out.println("Marry's Holiday pay = $"+marry.getDoublePay());
+
 
 
     }
