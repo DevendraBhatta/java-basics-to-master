@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -21,10 +23,39 @@ public class Main {
         System.out.println("last " + firstTen[firstTen.length - 1]);
 
         int[] newArray;
-        newArray = new int[]{5, 4, 3, 2, 1, 0};
 
+        newArray = new int[5];
+
+        // inserting elements
         for (int i = 0; i < newArray.length; i++) {
-            System.out.println(newArray[i]);
+            newArray[i] = newArray.length - i;
         }
+
+        // reading elements
+        for (int i = 0; i < newArray.length; i++) {
+            System.out.print(newArray[i]);
+        }
+
+        for (int element : newArray) {
+            System.out.print(element + " ");
+        }
+
+        System.out.println();
+        System.out.println(Arrays.toString(newArray));
+        Object objectVariable  = newArray;
+        if (objectVariable instanceof int[]){
+            System.out.println("Object Variable is really integer array");
+        }
+
+        Object[] objectArray = new Object[3];
+        objectArray[0] = "hello";
+        objectArray[1] = new StringBuilder("world");
+        objectArray[2] = newArray;
+        System.out.println(Arrays.toString(objectArray));
+
+
+
+
+
     }
 }
