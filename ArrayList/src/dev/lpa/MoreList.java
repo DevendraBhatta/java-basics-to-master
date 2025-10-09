@@ -1,50 +1,58 @@
+package dev.lpa;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class MoreLists {
+public class MoreList {
     public static void main(String[] args) {
+        String[] items = {"apples", "bananas", "milk", "eggs"};
 
-        String[] items = {"apples", "bananas", "milk", "eggs"}; // simple String array
-        List<String> list = List.of(items);  // String Type List which is Immutable
-        System.out.println(list); // printing the list
 
-        ArrayList<String> groceries = new ArrayList<>(list); // Arraylist and adding List name list
-        groceries.add("yogurt"); //adding yogurt too
+        List<String> list = List.of(items);
+        System.out.println(list);
+
+
+        ArrayList<String> groceries = new ArrayList<>(list);
+        groceries.add("yogurt");
         System.out.println(groceries);
 
-
         ArrayList<String> nextList = new ArrayList<>(
-                List.of("pickles", "mustard", "cheese"));// creating new list
+                List.of("pickles", "mustard", "cheese"));
+        nextList.add("honey");
+        System.out.println(nextList);
+
         groceries.addAll(nextList);
         System.out.println(groceries);
 
-        System.out.println("Third Item:"+groceries.get(2));
-        if (groceries.contains("mustard")){
-            System.out.println("List contains mustard");
+        System.out.println("Third Item = " + groceries.get(2));
+        if (groceries.contains("mustard")) {
+            System.out.println("List contain mustard");
         }
 
         groceries.add("yogurt");
-        System.out.println("first = "+groceries.indexOf("yogurt"));
+        System.out.println("first index" + groceries.indexOf("yogurt"));
+        System.out.println("last index " + groceries.lastIndexOf("yogurt"));
         System.out.println(groceries);
-        System.out.println("last  = "+groceries.lastIndexOf("yogurt"));
 
-
-        System.out.println(groceries);
         groceries.remove(1);
         System.out.println(groceries);
+
         groceries.remove("yogurt");
         System.out.println(groceries);
+
+
         groceries.removeAll(List.of("apples","eggs"));
         System.out.println(groceries);
-        groceries.retainAll(List.of("milk","mustard","cheese"));
+
+        groceries.retainAll(List.of("apples","milk","mustard","cheese"));
         System.out.println(groceries);
+
         groceries.clear();
-
         System.out.println(groceries);
-        System.out.println("isEmpty  = "+groceries.isEmpty());
-
+        System.out.println("is Empty "+groceries.isEmpty());
+        groceries.addAll(List.of("apples","milk","mustard","cheese"));
         groceries.addAll(Arrays.asList("eggs","pickles","mustard","ham"));
         System.out.println(groceries);
 
@@ -54,9 +62,9 @@ public class MoreLists {
         groceries.sort(Comparator.reverseOrder());
         System.out.println(groceries);
 
+
         var groceryArray = groceries.toArray(new String[groceries.size()]);
         System.out.println(Arrays.toString(groceryArray));
-
-
+        
     }
 }
