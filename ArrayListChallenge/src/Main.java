@@ -28,9 +28,7 @@ public class Main {
         String[] items = scanner.nextLine().split(",");
         // groceries.addAll(List.of(items));
         for (String i : items) {
-
             String trimmed = i.trim();
-
             if (groceries.indexOf(trimmed) < 0) {
                 groceries.add(trimmed);
             }
