@@ -49,11 +49,12 @@ public class Main {
         return i;
     }
 
-    private static ArrayList<Integer> getList(Integer... varargs){
+    private static ArrayList<Integer> getList(Integer ... varargs){
         ArrayList<Integer> aList = new ArrayList<>();
         for (int i: varargs){
             aList.add(i+5);
         }
         return aList;
     }
+    
 }
