@@ -1,0 +1,3 @@
+public enum PointMakers {
+    CIRCLE,PUSH_PIN,STAR,SQUARE,TRIANGLE,DIAMOND
+}
